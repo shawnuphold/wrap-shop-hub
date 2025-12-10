@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Car, Shield, Sun, Signpost, Layers } from "lucide-react";
+import ppfInstall from "@/assets/ppf-install.jpg";
+import windowTint from "@/assets/window-tint.jpg";
 
 const audiences = [
   { icon: Car, label: "Vehicle Wrap Shops" },
@@ -31,6 +33,49 @@ const WhoItsForSection = () => {
             Whether you specialize in one service or do it all, FilmOps adapts to your workflow.
           </p>
         </motion.div>
+
+        {/* Service Images Grid */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative group overflow-hidden rounded-2xl"
+          >
+            <img 
+              src={ppfInstall} 
+              alt="Professional PPF installation"
+              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <span className="glass px-4 py-2 rounded-full text-sm font-medium">
+                Paint Protection Film
+              </span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative group overflow-hidden rounded-2xl"
+          >
+            <img 
+              src={windowTint} 
+              alt="Professional window tinting"
+              className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4">
+              <span className="glass px-4 py-2 rounded-full text-sm font-medium">
+                Window Tinting
+              </span>
+            </div>
+          </motion.div>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {audiences.map((audience, index) => (
