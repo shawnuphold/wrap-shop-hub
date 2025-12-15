@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Calendar, Mail } from "lucide-react";
 
 const Index = () => {
@@ -79,14 +80,23 @@ const Index = () => {
         </motion.div>
 
         {/* Footer */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1 }}
-          className="mt-16 text-muted-foreground/60 text-sm"
+          className="mt-16 text-muted-foreground/60 text-sm space-y-2"
         >
-          © 2025 FilmOps. All rights reserved.
-        </motion.p>
+          <div className="flex items-center justify-center gap-4">
+            <Link to="/privacy" className="hover:text-primary transition-colors">
+              Privacy Policy
+            </Link>
+            <span>•</span>
+            <Link to="/terms" className="hover:text-primary transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+          <p>© 2025 FilmOps. All rights reserved.</p>
+        </motion.div>
       </div>
     </main>
   );

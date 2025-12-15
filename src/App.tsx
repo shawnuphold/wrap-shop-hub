@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import VehicleWraps from "./pages/industries/VehicleWraps";
 import PPFInstallers from "./pages/industries/PPFInstallers";
 import WindowTint from "./pages/industries/WindowTint";
@@ -23,6 +25,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/industries/vehicle-wraps" element={<VehicleWraps />} />
           <Route path="/industries/ppf" element={<PPFInstallers />} />
           <Route path="/industries/window-tint" element={<WindowTint />} />
